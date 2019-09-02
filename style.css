@@ -12,15 +12,16 @@ body
   width: 10%;
   border-radius: 10px;
   margin-top: 5%;
+  font-weight: bold;
 
 }
 #center:hover
 {
-  cursor:cell;
+  cursor:pointer;
 }
 
 .ques_fetch{
-  background-color: #4ae63c;
+  background-image: linear-gradient(to right, #4ae63cad,#4ae68caf);
   margin-right: 20%;
   margin-top: 2%;
   width: 65%;
@@ -41,6 +42,7 @@ body
 .section_inline p
 {
   display:inline-block;
+  font-weight: bold;
 
 }
 .section_inline
@@ -57,6 +59,8 @@ body
   border-style: none;
   align:center;
   margin-left: 35%;
+  transition: all .3s;
+  font-weight: bold;
 }
 #fetch-question-btn:hover .spinner-grow
 {
@@ -78,7 +82,7 @@ body
   margin-left: 16%;
   color: white;
   align:center;
-  background-color: black;
+  background-color:transparent;
   text-align: center;
   border-style: none;
   border-radius: 10px;
@@ -100,12 +104,11 @@ body
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.856);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fefefe71;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -122,9 +125,12 @@ body
 }
 .close {
   color: #aaaaaa;
+  position: absolute;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  top: 0;
+  right:10px;
 }
 
 .close:hover,
@@ -153,6 +159,8 @@ body
   border-style: none;
   padding: 15px;
   border-radius: 10px;
+  transition: all .3s;
+  font-weight: bold;
 }
 .spacing
 {
@@ -163,7 +171,7 @@ body
   padding: 15px;
   width:80%;
   text-align: center;
-  background-color: #ffb152;
+  background-image: linear-gradient(to right, #ffb152,#ffe859);
 }
 #center {
   display: block;
@@ -178,8 +186,7 @@ body
   position: absolute;
   text-align: center;
   display: block;
-  background-color:rgb(20, 20, 20,0.7);
-  border-radius: 25px;
+  background-color: transparent;
   width: 40%;
 }
 #enter_details
