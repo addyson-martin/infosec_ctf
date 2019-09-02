@@ -125,7 +125,7 @@ function check_flag()
     } else {
       alert("PLEASE USE YOUR 2019 BATCH STUDENT ID")
     }
-    
+
   }
   else {
     alert("PLEASE USE YOUR 2019 BATCH STUDENT ID")
@@ -145,4 +145,10 @@ window.onclick = function(event) {
   if (event.target == flag) {
     flag.style.display = "none";
   }
+}
+function pop_notice()
+{
+  flag=document.getElementById("myModal");
+  flag.style.display="block";
+  document.getElementById("result_here").innerHTML="<b>"+"NOTICE:"+"<br>"+"</b>"+"IT IS ADVISED TO INSTALL LINUX(RECOMMENDED:KALI LINUX) IN YOUR SYSTEM BEFORE COMING TO THE"+"<b>"+" BLACK HAT "+"</b>"+"GROUP OF IIIT!!";
 }
