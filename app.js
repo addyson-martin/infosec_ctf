@@ -111,7 +111,7 @@ function check_flag()
   {
     alert("PLEASE ENTER THE FLAG AND ID BEFORE SUBMITTING");
   }
-  else if (/[Bb]\d\d[19]/.test(id)) {
+  else if (/[Bb][1-5]\d[19]/.test(id)) {
     var index=flag_cr.localeCompare(usr_flag);
     if(index!=0)
     {
