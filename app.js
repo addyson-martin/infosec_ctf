@@ -57,8 +57,8 @@ function getQuestions()
       flag_temp.classList.remove("hide");
       flag_temp=document.getElementById("grow-spinner");
       flag_temp.classList.add("hide");
-      flag_temp=document.getElementById("fetch-question-btn");
-      flag_temp.classList.add("hide");
+      // flag_temp=document.getElementById("fetch-question-btn");
+      // flag_temp.classList.add("hide");
       flag_temp=document.getElementById("default_text");
       flag_temp.classList.add("hide");
       document.getElementById(ques).innerHTML=data;
@@ -111,16 +111,21 @@ function check_flag()
   {
     alert("PLEASE ENTER THE FLAG AND ID BEFORE SUBMITTING");
   }
-  else if (/[Bb][1-5]\d[19]/.test(id)) {
-    var index=flag_cr.localeCompare(usr_flag);
-    if(index!=0)
-    {
-      alert("YOU ARE NOT TOO SMART"+"\n"+"PLEASE TRY AGAIN ;) ;)");
+  else if (id.length === 7) {
+    if (/[Bb][1-5]\d[19]/.test(id)) {
+      var index=flag_cr.localeCompare(usr_flag);
+      if(index!=0)
+      {
+        alert("YOU ARE NOT TOO SMART"+"\n"+"PLEASE TRY AGAIN ;) ;)");
+      }
+      else{
+        appendID(id,searchFor);
+        alert("BRAVO!!!!"+"DON'T BE OVERCONFIDENT"+"\n"+"SOLVE ATLEAST 7 QUESTIONS");
+      }
+    } else {
+      alert("PLEASE USE YOUR 2019 BATCH STUDENT ID")
     }
-    else{
-      appendID(id,searchFor);
-      alert("BRAVO!!!!"+"DON'T BE OVERCONFIDENT"+"\n"+"SOLVE ATLEAST 7 QUESTIONS");
-    }
+    
   }
   else {
     alert("PLEASE USE YOUR 2019 BATCH STUDENT ID")
