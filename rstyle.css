@@ -1,0 +1,23 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 180px;
+}
+.back{
+	display: block;
+
+}
+.container{
+  align:center;
+  text-align: center;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.card-img-top
+{
+  width: 100px;
+  height: 100px;
+  margin-left: 15%;
+}

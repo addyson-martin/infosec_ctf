@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+       <title>INFOSEC CONTEST</title>
+       <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       <link rel="shortcut icon" href="hacker.ico"/>
+       <link rel="stylesheet" href="style.css">
+
+
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+       <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+<!-- here is the flag hint : do u know the secret and its fuunction-->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAmQdt00eDFHc6u3Wf1jfvAK-4ngpBWE6M",
+    authDomain: "infosec-ea981.firebaseapp.com",
+    databaseURL: "https://infosec-ea981.firebaseio.com",
+    projectId: "infosec-ea981",
+    storageBucket: "",
+    messagingSenderId: "36358204978",
+    appId: "1:36358204978:web:e3a2f331d4d50acf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="app.js"></script>
+<meta charset="utf-8">
+</head>
+
+<body onload="getQuestions(),reload(),dbConn()" >
+  <!--script for particles js-->
+  <div id="particles-js"></div>
+  <script src="particles.js"></script>
+  <script src="app_1.js"></script>
+<!--end-->
+    <div class="img-container">
+    <img src="Logo.png" onclick="get_resouces()" id="center" alt="InfoSec">
+    </div>
+    <div id="page-content">
+      <div  id="question" >
+        <button id="fetch-question-btn" name="fetch-ques" onclick="getQuestions()">FETCH QUESTIONS</button>
+        <p id="default_text" class="hidden"></p>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="close_modal()">&times;</span>
+            <p id="result_here"></p>
+          </div>
+
+</div>
+        <div id="grow-spinner" class="spinner-grow fetch_box"></div>
+        <div id="question_box" class="hide"><br><br>
+    <span class="section_inline">
+     <p id="ques_1" class="ques_fetch"></p><button class="ac_result" id="btn-1" onclick="getResult(1),openModal()">RESULTS</button>
+    </span>
+    <span class="section_inline">
+     <p id="ques_2" class="ques_fetch"></p><button class="ac_result" id="btn-2" onclick="getResult(2),openModal()" >RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_3" class="ques_fetch"></p><button class="ac_result" id="btn-3" onclick="getResult(3),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_4" class="ques_fetch"></p><button class="ac_result" id="btn-4"onclick="getResult(4),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_5" class="ques_fetch"></p><button class="ac_result" id="btn-5"onclick="getResult(5),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_6" class="ques_fetch"></p><button class="ac_result" id="btn-6"onclick="getResult(6),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_7" class="ques_fetch"></p><button class="ac_result" id="btn-7"onclick="getResult(7),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_8" class="ques_fetch"></p><button class="ac_result" id="btn-8"onclick="getResult(8),openModal()">RESULTS</button>
+   </span>
+   <span class="section_inline">
+     <p id="ques_9" class="ques_fetch"></p><button class="ac_result" id="btn-9"onclick="getResult(9),openModal()">RESULTS</button>
+    </span>
+    <span class="section_inline">
+      <p id="ques_10" class="ques_fetch"></p><button class="ac_result" id="btn-10"onclick="getResult(10),openModal()">RESULTS</button>
+     </span>
+     <span class="section_inline">
+       <p id="ques_11" class="ques_fetch"></p><button class="ac_result" id="btn-11"onclick="getResult(11),openModal()">RESULTS</button>
+      </span>
+      <span class="section_inline">
+        <p id="ques_12" class="ques_fetch"></p><button class="ac_result" id="btn-12"onclick="getResult(12),openModal()">RESULTS</button>
+       </span>
+
+   </div>
+    </div>
+
+    <div id="answer">
+      <form name="credentials" id="form_1">
+        <div id="enter_details">
+          <input type="text" class="spacing" id="enterId" name="cllg_id" placeholder="ENTER YOUR COLLEGE ID"><br>
+          <select name="questions" class="spacing" id="select_ques">
+               <option value="default" selected>SELECT QUESTION</option>
+               <option value="1">QUESTION 1</option>
+               <option value="2">QUESTION 2</option>
+               <option value="3">QUESTION 3</option>
+               <option value="4">QUESTION 4</option>
+               <option value="5">QUESTION 5</option>
+               <option value="6">QUESTION 6</option>
+               <option value="7">QUESTION 7</option>
+               <option value="8">QUESTION 8</option>
+               <option value="9">QUESTION 9</option>
+               <option value="10">QUESTION 10</option>
+               <option value="10">QUESTION 11</option>
+               <option value="10">QUESTION 12</option>
+
+          </select><br>
+          <input type="text" class="spacing" onclick="get_flag()" id="enter_answer" name="usr_input" placeholder="ENTER THE FLAG"><br>
+        </div>
+      </form>
+      <button id="submit-button"  onclick="check_flag()">SUBMIT</button>
+    </div>
+  </div>
+
+
+
+</body>
+
+</body>
+</html>
