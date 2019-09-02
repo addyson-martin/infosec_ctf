@@ -121,7 +121,8 @@ body
   padding: 20px;
   align:center;
   text-align: center;
-  font-size: 50px;;
+  font-size: 50px;
+  word-wrap: break-word;
 }
 .close {
   color: #aaaaaa;
