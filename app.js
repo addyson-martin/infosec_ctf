@@ -150,5 +150,5 @@ function pop_notice()
 {
   flag=document.getElementById("myModal");
   flag.style.display="block";
-  document.getElementById("result_here").innerHTML="<b>"+"NOTICE:"+"<br>"+"</b>"+"IT IS ADVISED TO INSTALL LINUX(RECOMMENDED:KALI LINUX) IN YOUR SYSTEM BEFORE COMING TO THE"+"<b>"+" BLACK HAT "+"</b>"+"GROUP OF IIIT!!";
+  document.getElementById("result_here").innerHTML="<b>"+"NOTICE:"+"<br>"+"</b>"+"IT IS ADVISED TO INSTALL LINUX(RECOMMENDED:KALI LINUX) IN YOUR SYSTEM BEFORE COMING TO THE"+"<b>"+" BLACK HAT "+"</b>"+"GROUP OF IIIT!!"+"<br>"+"HOWEVER YOU DON'T REQUIRE LINUX FOR SOLVING THIS CONTEST.";
 }
