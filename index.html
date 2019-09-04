@@ -49,7 +49,7 @@
     </div>
     <div id="page-content">
       <div  id="question" >
-        <button id="fetch-question-btn" name="fetch-ques" onclick="getQuestions()">FETCH QUESTIONS</button>
+        <button id="fetch-question-btn" name="fetch-ques" onclick="getQuestions(),pop_notice_1()">FETCH QUESTIONS</button>
         <p id="default_text" class="hidden"></p>
         <div id="myModal" class="modal">
           <div class="modal-content">
@@ -125,6 +125,8 @@
       </form>
       <button id="submit-button"  onclick="check_flag()">SUBMIT</button>
     </div>
+
+    <p onclick="prepareRanks()">leaderboard HERE</p>
   </div>
 
 

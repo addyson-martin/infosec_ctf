@@ -36,7 +36,61 @@ function getResult(val)
   var succ_ids=Object.keys(ac);
   document.getElementById("result_here").innerHTML="THIS PROBLEM IS SOLVED BY:-"+"<br>"+succ_ids;
 }
+
+return succ_ids;
 }
+function prepareRanks()
+{
+  var lst="B518006,";
+    for(var i=1;i<=ques_num;i++)
+    {
+      lst=lst+getResult(i)+",";
+    }
+    var all_studs=lst.split(",");
+    all_studs.pop();
+
+    // for(var j=0;j<all_studs.length;i++)
+    // {
+    //   var ref=firebase.database().ref("leaderboard/")
+    // }
+    var newArr=rmDuplicate(all_studs);
+    newArr.sort(function(a, b){
+    return b.count-a.count;
+})
+    console.log(newArr);
+    var response="SOLVED BY;)))<br>";
+    for(var j=0;j<newArr.length;j++)
+    {
+      var id=newArr[j].value;
+      var solved_ques=newArr[j].count;
+      response=response+id+"::"+solved_ques+"<br>";
+    }
+    document.getElementById("myModal").style.display="block";
+    document.getElementById("result_here").innerHTML=response;
+}
+function rmDuplicate(original) {
+
+	var area = [];
+	var copy = original.slice(0);
+	for (var i = 0; i < original.length; i++) {
+		var mCount = 0;
+		for (var w = 0; w < copy.length; w++) {
+			if (original[i] == copy[w]) {
+				mCount++;
+				delete copy[w];
+			}
+		}
+ 		if (mCount > 0) {
+			var a = new Object();
+			a.value = original[i];
+			a.count = mCount;
+			area.push(a);
+		}
+	}
+
+	return area;
+};
+
 function getQuestions()
 {
   var i;
@@ -101,7 +155,8 @@ function appendID(id,node)
 function check_flag()
 {
   var flag_cr;
-  var id=document.forms.credentials.cllg_id.value;
+  var id_raw=document.forms.credentials.cllg_id.value;
+  var id = id_raw.charAt(0).toUpperCase()+id_raw.slice(1);
   flag_cr=get_flag();
   var e = document.getElementById("select_ques");
   var opt_val = e.options[e.selectedIndex].value;
@@ -123,7 +178,14 @@ function check_flag()
         alert("BRAVO!!!!"+"DON'T BE OVERCONFIDENT"+"\n"+"SOLVE ATLEAST 7 QUESTIONS");
       }
     } else {
-      alert("PLEASE USE YOUR 2019 BATCH STUDENT ID")
+      var temp_1=flag_cr.localeCompare(usr_flag);
+      if(temp_1!=0)
+      {
+        alert("YOU ARE NOT TOO SMART"+"\n"+"PLEASE TRY AGAIN ;) ;)");
+      }
+      else{
+        alert("YOUR ANSWER IS CORRECT!!! BUT THESE QUESTIONS ARE TOO SIMPLE FOR YOU ;))");
+      }
     }
 
   }
@@ -151,4 +213,10 @@ function pop_notice()
   flag=document.getElementById("myModal");
   flag.style.display="block";
   document.getElementById("result_here").innerHTML="<b>"+"NOTICE:"+"<br>"+"</b>"+"IT IS ADVISED TO INSTALL LINUX(RECOMMENDED:KALI LINUX) IN YOUR SYSTEM BEFORE COMING TO THE"+"<b>"+" BLACK HAT "+"</b>"+"GROUP OF IIIT!!"+"<br>"+"HOWEVER YOU DON'T REQUIRE LINUX FOR SOLVING THIS CONTEST.";
+}
+function pop_notice_1()
+{
+  flag=document.getElementById("myModal");
+  flag.style.display="block";
+  document.getElementById("result_here").innerHTML="<b>"+"NOTICE:"+"<br>"+"</b>"+"SITE IS NOW OPEN FOR ALL THE STUDENTS OF IIIT , BUT ONLY FIRST YEARS WILL BE INCLUDED IN THE RANKLIST.<br>(UPDATE: NOW THERE IS LEADERBOARD AVAILABLE ON SITE FIND IT OUT IF YOU WANT TO SEE YOUR RANK)";
 }
