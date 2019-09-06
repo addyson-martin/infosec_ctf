@@ -57,7 +57,7 @@ function prepareRanks()
     newArr.sort(function(a, b){
     return b.count-a.count;
 })
-    console.log(newArr);
+    //console.log(newArr);
     var response="SOLVED BY;)))<br>";
     for(var j=0;j<newArr.length;j++)
     {
